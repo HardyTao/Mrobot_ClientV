@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/rl_view1"
+        android:layout_width="match_parent"
+        android:layout_height="101dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="114dp">
+
+        <Button
+            android:id="@+id/rl_kongzhi"
+            android:layout_width="wrap_content"
+            android:layout_height="80dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:background="@android:color/holo_red_light"
+            android:text="控制" />
+
+        <Button
+            android:id="@+id/rl_video"
+            android:layout_width="wrap_content"
+            android:layout_height="80dp"
+            android:layout_marginStart="74dp"
+            android:layout_marginEnd="73dp"
+            android:layout_toStartOf="@+id/rl_shiping"
+            android:layout_toEndOf="@+id/rl_kongzhi"
+            android:background="@android:color/holo_blue_light"
+            android:text="视讯" />
+
+        <Button
+            android:id="@+id/rl_shiping"
+            android:layout_width="wrap_content"
+            android:layout_height="80dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_gravity="center_horizontal"
+            android:background="@android:color/holo_blue_light"
+            android:text="语音控制" />
+
+
+    </RelativeLayout>
+</RelativeLayout>

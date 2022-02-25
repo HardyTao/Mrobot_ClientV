@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="light_blue">#2884F5</color>
+    <color name="light_red">#e40b0b</color>
+    <color name="localBackground">#827b92</color>
+    <color name="mainviewBackground">#c3c3c3</color>
+    <color name="Background">#00000000</color>
+    <color name="remoteBackground">#484258</color>
+    <color name="logInfo">#4a90e2</color>
+    <color name="logWarn">#fedd56</color>
+    <color name="logError">#fe375f</color>
+</resources>

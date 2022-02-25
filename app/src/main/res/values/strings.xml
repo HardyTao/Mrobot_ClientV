@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">BlueToothBLE</string>
+    <string name="shower_str11">其他方式绑定</string>
+    <string name="shower_str12">停止搜索</string>
+    <string name="shower_str4">搜索中</string>
+    <string name="shower_str5">未绑定</string>
+    <string name="shower_str6">搜索终止</string>
+    <string name="UserTimes">UserTimes=0 //是否是第一次使用App</string>
+    <string name="UserName">UserName=server//当前登录的用户名</string>
+    <string name="UserPW">UserPW=123//当前登录的用户密码</string>
+    <string name="chat_id">chat_id=hardy1//要连接的用户名</string>
+    <string name="channelName">channelName=123//视频通话频道</string>
+    <string name="BleName">BleName=SMARTCA//小车蓝牙名</string>
+    <string name="BlePW">BlePW=1234//小车蓝牙密码</string>
+    <string name="BondState">BondState=false  //蓝牙是否配对</string>
+    <string name="ConnState">ConnState=false //蓝牙连接状态</string>
+    <string name="UL">UL=off//超声波避障</string>
+    <string name="INF">INF=off//红外线避障</string>
+    <string name="PIR">PIR=off//人体热释电传感器</string>
+    <string name="FIRE">FIRE=off//火焰检测电传感器</string>
+    <string name="Far_near">Far_near=near//控制模式的选择</string>
+    <string name="roulette_button">roulette_button=button//软盘操控或按键操控</string>
+
+    <!-- PLEASE KEEP THIS App ID IN SAFE PLACE -->
+    <!-- Get your own App ID at https://dashboard.agora.io/ -->
+    <!-- After you entered the App ID, remove <##> outside of Your App ID -->
+    <string name="agora_app_id">d17187e70cb448529c2c19504e67b956</string>
+    <!-- Obtain a temp Access Token at https://dashboard.agora.io -->
+    <!-- You will need to deploy your own token server for production release -->
+    <!-- Leave this value empty if Security keys/Token is not enabled for your project -->
+    <!--string name="agora_access_token">006d17187e70cb448529c2c19504e67b956IABP82heR7aukgIVq/QK0IULyQdqYTzFrbyH1UrZUy5siuIVUyEAAAAAEABsKo0tIkjpYAEAAQAiSOlg</string-->
+</resources>

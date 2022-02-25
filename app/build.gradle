@@ -1,0 +1,61 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 30
+    defaultConfig {
+        applicationId "com.kaka.bluetoothble_client"
+        minSdkVersion 21
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.1"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    android.applicationVariants.all { variant ->         // 自定义打包名称
+        variant.outputs.all {
+            outputFileName = "Mrobot_ClientV1.1.apk"
+        }
+    }
+    buildTypes {
+        release {
+                minifyEnabled false
+                proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+
+    dependencies {
+        implementation fileTree(dir: 'libs', include: ['*.jar'])
+        //noinspection GradleCompatible
+        implementation 'com.android.support:appcompat-v7:27.1.1'
+        implementation 'com.android.support.constraint:constraint-layout:2.0.1'
+        testImplementation 'junit:junit:4.13.2'
+        androidTestImplementation 'com.android.support.test:runner:1.0.2'
+        androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+        implementation 'com.tbruyelle.rxpermissions2:rxpermissions:0.9.5@aar'
+        implementation "io.reactivex.rxjava2:rxjava:2.0.6"
+        implementation "io.reactivex.rxjava2:rxandroid:2.0.1"
+        implementation "com.blankj:utilcode:1.9.6"
+        implementation 'cn.rongcloud.sdk:call_lib:5.1.2'
+        implementation 'cn.rongcloud.sdk:im_kit:5.1.2'
+        implementation 'cn.rongcloud.sdk:im_lib:5.1.2'
+        implementation files('libs/Msc.jar')
+
+    }
+}
+
+dependencies {
+    //noinspection GradlePath
+    implementation files('libs\\agora-rtc-sdk.jar')
+    implementation files('libs\\hyphenatechat_3.8.2.jar')
+    implementation 'com.android.support:drawerlayout:28.0.0'
+
+}
+

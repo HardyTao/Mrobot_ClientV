@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@android:color/white">
+
+    <RelativeLayout
+        android:id="@+id/rl_bluetooth"
+        android:layout_width="155dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal">
+
+        <RelativeLayout
+            android:id="@+id/layout_ser_ble"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_centerInParent="true"
+            android:background="@drawable/bg_ble_progress">
+
+            <ProgressBar
+                android:id="@+id/progress_ser_bluetooth"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:indeterminateDrawable="@drawable/rotate_progressbar"
+                android:visibility="invisible" />
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/iv_ser_ble_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:src="@drawable/icon_ble_on" />
+
+        <TextView
+            android:id="@+id/tv_ser_ble_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/shower_str12"
+            android:textColor="@color/light_blue"
+            android:textSize="15sp"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tv_ser_bind_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/layout_ser_ble"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="17dp"
+            android:layout_marginEnd="59dp"
+            android:text="@string/shower_str5"
+            android:textColor="@color/light_blue" />
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/ble_list_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/rl_bluetooth"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="67dp"
+        android:layout_marginBottom="-1dp"
+        android:divider="#cccccc"
+        android:dividerHeight="1px" />
+    <RelativeLayout
+        android:id="@+id/rl_view1"
+        android:layout_centerHorizontal="true"
+        android:visibility="gone"
+        android:layout_below="@id/rl_bluetooth"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_horizontal">
+        <Button
+            android:id="@+id/rl_kongzhi"
+            android:layout_width="wrap_content"
+            android:layout_height="80dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:text="控制"
+            android:background="@android:color/holo_red_light"/>
+
+        <Button
+            android:id="@+id/rl_video"
+            android:layout_width="wrap_content"
+            android:layout_height="80dp"
+            android:layout_marginStart="74dp"
+            android:layout_marginEnd="73dp"
+            android:layout_toStartOf="@+id/rl_shiping"
+            android:layout_toEndOf="@+id/rl_kongzhi"
+            android:background="@android:color/holo_blue_light"
+            android:text="视讯" />
+
+       <Button
+            android:id="@+id/rl_shiping"
+            android:layout_width="wrap_content"
+            android:layout_height="80dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:text="语音控制"
+            android:background="@android:color/holo_blue_light"/>
+        <SurfaceView
+            android:id="@+id/sView"
+            android:visibility="gone"
+            android:layout_below="@id/rl_kongzhi"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="-1dp"
+            android:divider="#cccccc"
+            android:dividerHeight="1px" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/opera_view"
+        android:layout_marginTop="10dp"
+        android:visibility="gone"
+        android:layout_below="@id/rl_bluetooth"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/btnRead"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="读数据"
+            />
+        <LinearLayout
+            android:id="@+id/Lv_write"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+            <EditText
+                android:id="@+id/et_write"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.0"
+                />
+            <Button
+                android:id="@+id/btnWrite"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="写入"
+                />
+
+        </LinearLayout>
+        <TextView
+            android:id="@+id/tv_response"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="设备返回："
+            />
+        <LinearLayout
+            android:id="@+id/control_reveal"
+            android:layout_marginTop="10dp"
+            android:visibility="gone"
+            android:layout_below="@id/tv_response"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="90dp">
+            <Button
+                android:id="@+id/rl_shudu"
+                android:layout_width="50dp"
+                android:layout_height="20dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="0dp"
+                android:text="速度:"
+                android:background="@android:color/darker_gray"/>
+            <TextView
+                android:id="@+id/rl_speed"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="0dp"
+                android:text="0.1m/s"
+                android:textColor="@color/light_blue"
+                android:textSize="15sp"/>
+            <Button
+                android:id="@+id/rl_dianliang"
+                android:layout_width="50dp"
+                android:layout_height="20dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="3dp"
+                android:text="电量:"
+                android:background="@android:color/darker_gray"/>
+            <TextView
+                android:id="@+id/rl_electric"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="54dp"
+                android:text="11.60"
+                android:textColor="@color/light_blue"
+                android:textSize="15sp"/>
+        </LinearLayout>
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/control_reveal">
+            <RelativeLayout
+                android:id="@+id/control_response"
+                android:layout_marginTop="0dp"
+                android:visibility="gone"
+                android:orientation="vertical"
+                android:layout_width="300dp"
+                android:layout_height="210dp"
+                android:layout_weight="3"
+                android:layout_gravity="center_horizontal"
+                >
+
+                <ImageView
+                    android:id="@+id/control_left"
+                    android:layout_width="90dp"
+                    android:layout_height="60dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="28dp"
+                    android:layout_marginTop="78dp"
+                    android:layout_marginBottom="72dp"
+                    android:src="@drawable/turn_left" />
+
+                <ImageView
+                    android:id="@+id/control_right"
+                    android:layout_width="90dp"
+                    android:layout_height="60dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginTop="78dp"
+                    android:layout_marginEnd="28dp"
+                    android:layout_marginBottom="72dp"
+                    android:src="@drawable/turn_right" />
+
+                <ImageView
+                    android:id="@+id/control_Go_on"
+                    android:layout_width="90dp"
+                    android:layout_height="60dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="134dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="134dp"
+                    android:src="@drawable/go_on" />
+
+                <ImageView
+                    android:id="@+id/control_Go_straight"
+                    android:layout_width="90dp"
+                    android:layout_height="60dp"
+                    android:layout_above="@+id/control_Back_off"
+                    android:layout_below="@+id/control_Go_on"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="7dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="7dp"
+                    android:layout_toStartOf="@+id/control_right"
+                    android:layout_toEndOf="@+id/control_left"
+                    android:src="@drawable/go_straight" />
+
+                <ImageView
+                    android:id="@+id/control_Back_off"
+                    android:layout_width="90dp"
+                    android:layout_height="60dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="134dp"
+                    android:layout_marginEnd="134dp"
+                    android:layout_marginBottom="8dp"
+                    android:src="@drawable/back_off" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/control_response1"
+                android:visibility="gone"
+                android:layout_width="wrap_content"
+                android:layout_height="210dp"
+                android:layout_weight="1"
+                android:layout_toRightOf="@id/control_response">
+                <Button
+                    android:id="@+id/control_Setup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="38dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginBottom="0dp"
+                    android:layout_weight="1"
+                    android:background="@android:color/darker_gray"
+                    android:text="设置" />
+
+                <Button
+                    android:id="@+id/control_Speedup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="38dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="80dp"
+                    android:layout_marginEnd="7dp"
+                    android:layout_marginBottom="0dp"
+                    android:layout_weight="1"
+                    android:background="@android:color/holo_green_dark"
+                    android:text="加速" />
+
+                <Button
+                    android:id="@+id/control_Stop"
+                    android:layout_width="wrap_content"
+                    android:layout_height="38dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="124dp"
+                    android:layout_marginEnd="7dp"
+                    android:layout_marginBottom="0dp"
+                    android:layout_weight="1"
+                    android:background="@android:color/holo_red_light"
+                    android:text="停止" />
+
+                <Button
+                    android:id="@+id/control_Slowdown"
+                    android:layout_width="wrap_content"
+                    android:layout_height="38dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="168dp"
+                    android:layout_marginEnd="7dp"
+                    android:layout_marginBottom="0dp"
+                    android:layout_weight="1"
+                    android:background="@android:color/holo_orange_light"
+                    android:text="减速" />
+            </RelativeLayout>
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/Close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:text="关闭" />
+
+    <Button
+        android:id="@+id/breakk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:text="返回" />
+
+</RelativeLayout>
